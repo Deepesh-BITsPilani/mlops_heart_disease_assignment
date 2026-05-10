@@ -516,7 +516,12 @@ def main():
         "GitHub: https://github.com/Deepesh-BITsPilani/mlops_heart_disease_assignment"
     )
 
-    add_heading(doc, "10.4 Conclusion", level=2)
+    add_heading(doc, "10.4 Demo Video", level=2)
+    doc.add_paragraph(
+        "https://drive.google.com/file/d/1kcl4uasG1mN_f0jjZLTgqoPndGuqbrDt/view?usp=sharing"
+    )
+
+    add_heading(doc, "10.5 Conclusion", level=2)
     doc.add_paragraph(
         "This project demonstrates a complete MLOps lifecycle from data acquisition through "
         "production deployment and monitoring. The pipeline achieves a ROC-AUC of 0.958 for "

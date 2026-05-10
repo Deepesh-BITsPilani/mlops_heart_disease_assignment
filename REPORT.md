@@ -382,6 +382,10 @@ Starts three services:
 
 GitHub: https://github.com/Deepesh-BITsPilani/mlops_heart_disease_assignment
 
+## Demo Video
+
+https://drive.google.com/file/d/1kcl4uasG1mN_f0jjZLTgqoPndGuqbrDt/view?usp=sharing
+
 ## Deliverables Checklist
 
 - [x] Code, Dockerfile(s), requirements.txt
