@@ -380,7 +380,7 @@ Starts three services:
 
 ## Repository Link
 
-GitHub repository containing all code, configurations, and documentation as described in this report.
+GitHub: https://github.com/Deepesh-BITsPilani/mlops_heart_disease_assignment
 
 ## Deliverables Checklist
 

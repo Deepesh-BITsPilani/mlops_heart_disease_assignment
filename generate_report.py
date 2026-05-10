@@ -511,7 +511,12 @@ def main():
     )
     add_code(doc, structure)
 
-    add_heading(doc, "10.3 Conclusion", level=2)
+    add_heading(doc, "10.3 Repository Link", level=2)
+    doc.add_paragraph(
+        "GitHub: https://github.com/Deepesh-BITsPilani/mlops_heart_disease_assignment"
+    )
+
+    add_heading(doc, "10.4 Conclusion", level=2)
     doc.add_paragraph(
         "This project demonstrates a complete MLOps lifecycle from data acquisition through "
         "production deployment and monitoring. The pipeline achieves a ROC-AUC of 0.958 for "

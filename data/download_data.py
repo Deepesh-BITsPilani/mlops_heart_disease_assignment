@@ -1,18 +1,20 @@
 """
 Download and prepare the Heart Disease UCI dataset.
 
-Reads the processed Cleveland data, adds column headers,
-and saves as a clean CSV for downstream processing.
+Reads the processed Cleveland data from a local copy if available,
+otherwise downloads it from the UCI Machine Learning Repository.
 
 Usage:
     python data/download_data.py
 """
 import os
 import pandas as pd
+from urllib.request import urlretrieve
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
-RAW_SOURCE = os.path.join(PROJECT_ROOT, "..", "heart+disease", "processed.cleveland.data")
+LOCAL_SOURCE = os.path.join(PROJECT_ROOT, "..", "heart+disease", "processed.cleveland.data")
+UCI_URL = "https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data"
 RAW_OUTPUT = os.path.join(SCRIPT_DIR, "raw", "heart.csv")
 
 COLUMN_NAMES = [
@@ -21,13 +23,27 @@ COLUMN_NAMES = [
 ]
 
 
+def _resolve_source():
+    """Return path to the raw Cleveland data, downloading if needed."""
+    if os.path.exists(LOCAL_SOURCE):
+        print(f"  Using local dataset: {LOCAL_SOURCE}")
+        return LOCAL_SOURCE
+
+    downloaded = os.path.join(SCRIPT_DIR, "raw", "processed.cleveland.data")
+    os.makedirs(os.path.dirname(downloaded), exist_ok=True)
+    print(f"  Local dataset not found. Downloading from UCI repository...")
+    urlretrieve(UCI_URL, downloaded)
+    print(f"  Downloaded to {downloaded}")
+    return downloaded
+
+
 def download():
-    """Copy raw UCI data and save with headers as CSV."""
+    """Load raw UCI data (local or remote) and save with headers as CSV."""
     os.makedirs(os.path.dirname(RAW_OUTPUT), exist_ok=True)
 
-    df = pd.read_csv(RAW_SOURCE, header=None, names=COLUMN_NAMES, na_values="?")
+    source = _resolve_source()
+    df = pd.read_csv(source, header=None, names=COLUMN_NAMES, na_values="?")
 
-    # Convert target: 0 stays 0, values 1-4 become 1 (disease present)
     df["target"] = (df["target"] > 0).astype(int)
 
     df.to_csv(RAW_OUTPUT, index=False)
