@@ -188,3 +188,8 @@ Two pipeline options provided:
 - **Structured JSON logging** for all API requests
 - **Prometheus** metrics: request count, latency, error rate, prediction distribution
 - **Grafana** dashboard: pre-configured with API performance panels
+
+
+
+
+# p.s.  "dekausha" is Company specific userId of mine. 
