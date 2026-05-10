@@ -1,0 +1,28 @@
+{
+  "total_samples": 303,
+  "train_samples": 242,
+  "test_samples": 61,
+  "features": [
+    "age",
+    "sex",
+    "cp",
+    "trestbps",
+    "chol",
+    "fbs",
+    "restecg",
+    "thalach",
+    "exang",
+    "oldpeak",
+    "slope",
+    "ca",
+    "thal"
+  ],
+  "target_distribution_train": {
+    "0": 131,
+    "1": 111
+  },
+  "target_distribution_test": {
+    "0": 33,
+    "1": 28
+  }
+}

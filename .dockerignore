@@ -1,0 +1,14 @@
+venv/
+mlruns/
+__pycache__/
+*.pyc
+.git/
+.github/
+notebooks/
+screenshots/
+data/raw/
+data/processed/
+*.ipynb
+.pytest_cache/
+test-results.xml
+REPORT.md
