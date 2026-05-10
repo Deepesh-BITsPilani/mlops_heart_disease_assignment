@@ -46,10 +46,10 @@ This trains Logistic Regression and Random Forest with GridSearchCV, logs experi
 ### 4. View MLflow Experiments
 
 ```bash
-mlflow ui --backend-store-uri ./mlruns
+mlflow ui --backend-store-uri ./mlruns --port 5001
 ```
 
-Open http://localhost:5000 to compare experiment runs.
+Open http://localhost:5001 to compare experiment runs.
 
 ### 5. Run Tests
 

@@ -142,7 +142,7 @@ The MLflow UI (`mlflow ui --backend-store-uri ./mlruns`) provides:
 - Metric charts showing performance across runs
 - Artifact browser for downloading models and plots
 
-*To reproduce: Run `mlflow ui` from the project root and navigate to http://localhost:5000.*
+*To reproduce: Run `mlflow ui --port 5001` from the project root and navigate to http://localhost:5001.*
 
 ---
 
@@ -187,7 +187,7 @@ python -c "from src.training.train import run; run()"
 
 24 unit tests organized in three test files:
 
-- **test_data_prep.py** (10 tests): Data loading, missing value handling, shape validation, target encoding, train/test split proportions, stratification, preprocessor transforms.
+- **test_data_prep.py** (9 tests): Data loading, missing value handling, shape validation, target encoding, train/test split proportions, stratification, preprocessor transforms.
 - **test_model.py** (8 tests): Model training accuracy thresholds, prediction format (binary), probability sums, single-sample prediction, saved model loading.
 - **test_api.py** (7 tests): Root endpoint, health check, valid prediction, probability sums, missing field validation, empty body validation, Swagger docs.
 

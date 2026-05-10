@@ -290,7 +290,7 @@ def main():
 
     add_heading(doc, "4.2 Viewing Experiments", level=2)
     doc.add_paragraph("To view the MLflow experiment comparison UI:")
-    add_code(doc, "mlflow ui --backend-store-uri ./mlruns\n# Open http://localhost:5000")
+    add_code(doc, "mlflow ui --backend-store-uri ./mlruns --port 5001\n# Open http://localhost:5001")
     doc.add_paragraph(
         "The MLflow UI provides side-by-side comparison of Logistic Regression vs Random Forest "
         "runs, metric charts showing performance, and an artifact browser for downloading "
@@ -338,7 +338,7 @@ def main():
     add_table(doc,
         ["Test File", "Count", "Coverage"],
         [
-            ["test_data_prep.py", "10", "Data loading, missing values, shape, target encoding, split, preprocessor"],
+            ["test_data_prep.py", "9", "Data loading, missing values, shape, target encoding, split, preprocessor"],
             ["test_model.py", "8", "Training accuracy, prediction format, probabilities, saved model"],
             ["test_api.py", "7", "Root endpoint, health check, prediction, validation, Swagger docs"],
         ],
